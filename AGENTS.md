@@ -30,8 +30,18 @@ they describe future work. Preserve them as references.
 
 ## Operation workflow
 
+For purchases, broker screenshots and acquisition fees/taxes, read
+`.agents/skills/purchase-costs/SKILL.md`. Effective unit cost is the full
+acquisition total divided by quantity. Add confirmed extra purchase charges
+(including applicable TTF) only when not already included in the supplied total;
+preserve the exact total and never double-count charges as account-level fees.
+
 1. Resolve account names/IDs, tracking methods and currencies with `list_accounts`.
    For investment operations resolve instrument IDs with `list_instruments`.
+   If the requested security is missing, verify its identity and listing, then use
+   `create_instrument` before recording its purchase. Never confuse creating
+   shared metadata with recording a holding. Inspect the list after an uncertain
+   creation outcome before retrying.
 2. Ask only for genuinely missing or ambiguous details. Do not guess accounts,
    dates, amounts, instrument identities or timezone offsets. Resolve relative
    dates using the user's intended timezone, clarifying if uncertain.

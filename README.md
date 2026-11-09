@@ -64,7 +64,7 @@ want to experiment with writes rather than record actual transactions.
 ## Available tools
 
 `list_accounts`, `get_account_balance`, `list_recent_operations`,
-`list_instruments`, `record_income`, `record_expense`, `record_bank_interest`,
+`list_instruments`, `create_instrument`, `record_income`, `record_expense`, `record_bank_interest`,
 `record_transfer`, `record_investment_operation`.
 
 The implementation and detailed contracts belong to the tracker repository's
